@@ -41,7 +41,7 @@ void Mesh::OnRender(const GameTime& time)
     auto location = gl::GetAttribLocation(material.Program(), "Pos");
     check_gl_error();
     
-//    gl::EnableVertexAttribArray(location);
+    gl::EnableVertexAttribArray(location);
     check_gl_error();
 
     gl::VertexAttribPointer(location, 3, gl::FLOAT, false, 0, nullptr);
@@ -51,11 +51,11 @@ void Mesh::OnRender(const GameTime& time)
     
     check_gl_error();
     
-//    gl::DrawElements((GLenum)Type, (GLuint)m_indexCount, gl::UNSIGNED_SHORT, (GLvoid*)nullptr);
-    gl::DrawElements((GLenum)Type, 2, gl::UNSIGNED_SHORT, (GLvoid*)nullptr);
+    gl::DrawElements((GLenum)Type, (GLuint)m_indexCount, gl::UNSIGNED_SHORT, (GLvoid*)nullptr);
+//    gl::DrawElements((GLenum)Type, 2, gl::UNSIGNED_SHORT, (GLvoid*)nullptr);
     check_gl_error();
 
-    gl::DrawArrays(gl::LINES, 0, (GLsizei)m_vertexCount);// m_vertexArray.VertexBuffer().Count());
+    gl::DrawArrays(gl::TRIANGLES, 0, (GLsizei)m_vertexCount);// m_vertexArray.VertexBuffer().Count());
     
     
     
