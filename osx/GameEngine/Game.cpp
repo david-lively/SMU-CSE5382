@@ -66,6 +66,11 @@ bool Game::OnInitialize()
     
     check_gl_error();
     
+    const GLubyte* renderer = gl::GetString (gl::RENDERER); // get renderer string
+    const GLubyte* version = gl::GetString (gl::VERSION); // version as a string
+    printf("Renderer: %s\n", renderer);
+    printf("OpenGL version supported %s\n", version);
+
     OnCreateScene();
     
     gl::ClearColor(0,0,0.2f,1);
