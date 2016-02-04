@@ -1,4 +1,4 @@
-//
+﻿//
 //  Game.cpp
 //
 //  Created by David Lively on 2/1/16.
@@ -6,6 +6,10 @@
 //
 
 #include "Game.h"
+
+#include <iostream>
+
+using namespace std;
 
 Game::Game() : m_window(nullptr), m_isInitialized(false)
 {
@@ -29,12 +33,16 @@ bool Game::OnInitialize()
         return false;
     }
     
+    
     /// specify some window and OpenGL API parameters
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, 1); // ,GL_TRUE);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+//    
+//    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, 1); // ,GL_TRUE);
+////
 //    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_DEPTH_BITS, 16);
+//
+//    glfwWindowHint(GLFW_DEPTH_BITS, 16);
     
     
     /// enable multisampling on a 4x4 grid (for full-screen anti-aliasing)
@@ -62,6 +70,12 @@ bool Game::OnInitialize()
     
     check_gl_error();
     
+    const GLubyte* renderer = gl::GetString (gl::RENDERER); // get renderer string
+    const GLubyte* version = gl::GetString (gl::VERSION); // version as a string
+
+    Log::Info << "Renderer " << renderer << endl;
+    Log::Info << "OpenGL version supported: " << version << endl;
+
     OnCreateScene();
     
     gl::ClearColor(0,0,0.2f,1);

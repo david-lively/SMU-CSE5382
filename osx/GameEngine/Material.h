@@ -35,11 +35,10 @@ public:
     std::string GetShaderLog(GLuint shader);
     std::string GetProgramLog(GLuint program);
     
-    static void ListAttributes(GLuint program);
-    
-    
 private:
     GLuint m_program;
+
+	bool CompileSuccessful(GLint program);
     
     
 };

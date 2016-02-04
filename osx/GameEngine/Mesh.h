@@ -43,6 +43,10 @@ public:
         /// make sure there aren't any pending OpenGL errors
         check_gl_error();
         
+        gl::GenVertexArrays(1, &m_vao);
+        gl::BindVertexArray(m_vao);
+        check_gl_error();
+
         /// create a GL buffer for the vertices
         gl::GenBuffers(1, &m_vertexBuffer);
         
@@ -101,7 +105,9 @@ private:
     
     size_t m_indexCount = 0;
     GLuint m_indexBuffer = 0;
-    
+   
+    GLuint m_vao = 0;
+
 };
 
 

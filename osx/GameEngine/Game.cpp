@@ -1,4 +1,4 @@
-//
+﻿//
 //  Game.cpp
 //
 //  Created by David Lively on 2/1/16.
@@ -66,6 +66,12 @@ bool Game::OnInitialize()
     
     check_gl_error();
     
+    const GLubyte* renderer = gl::GetString (gl::RENDERER); // get renderer string
+    const GLubyte* version = gl::GetString (gl::VERSION); // version as a string
+
+    Log::Info << "Renderer " << renderer << endl;
+    Log::Info << "OpenGL version supported: " << version << endl;
+
     OnCreateScene();
     
     gl::ClearColor(0,0,0.2f,1);
