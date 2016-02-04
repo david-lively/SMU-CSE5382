@@ -18,7 +18,7 @@
 class Material : public GameObject
 {
 public:
-    bool Build(std::string vertexShaderSource, std::string fragmentShaderSource);
+    bool Build(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
     
     void OnDispose() override;
     
@@ -35,9 +35,7 @@ public:
     std::string GetShaderLog(GLuint shader);
     std::string GetProgramLog(GLuint program);
     
-    static void ListAttributes(GLuint program);
-    
-    
+
 private:
     GLuint m_program;
     

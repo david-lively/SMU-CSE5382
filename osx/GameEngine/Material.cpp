@@ -15,8 +15,7 @@ using namespace std;
 
 
 
-
-bool Material::Build(string vertexShaderSource, string fragmentShaderSource)
+bool Material::Build(const std::string& vertexShaderSource, const std::string& fragmentShaderSource)
 {
 
     check_gl_error();
@@ -67,8 +66,6 @@ bool Material::Build(string vertexShaderSource, string fragmentShaderSource)
     check_gl_error();
 
     gl::LinkProgram(m_program);
-    
-    ListAttributes(m_program);
     
     check_gl_error();
     
@@ -153,12 +150,3 @@ string Material::GetProgramLog(GLuint program)
     return log;
 }
 
-
-void Material::ListAttributes(GLuint program)
-{
-    GLint attribCount;
-    
-    gl::GetProgramiv(program, gl::ACTIVE_ATTRIBUTES, &attribCount);
-    
-    Log::Info << "Found " << attribCount << " active attributes\n";
-}
