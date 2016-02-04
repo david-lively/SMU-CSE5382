@@ -1,4 +1,4 @@
-//
+﻿//
 //  Game.cpp
 //
 //  Created by David Lively on 2/1/16.
@@ -68,8 +68,9 @@ bool Game::OnInitialize()
     
     const GLubyte* renderer = gl::GetString (gl::RENDERER); // get renderer string
     const GLubyte* version = gl::GetString (gl::VERSION); // version as a string
-    printf("Renderer: %s\n", renderer);
-    printf("OpenGL version supported %s\n", version);
+
+    Log::Info << "Renderer " << renderer << endl;
+    Log::Info << "OpenGL version supported: " << version << endl;
 
     OnCreateScene();
     
