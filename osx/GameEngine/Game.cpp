@@ -7,6 +7,10 @@
 
 #include "Game.h"
 
+#include <iostream>
+
+using namespace std;
+
 Game::Game() : m_window(nullptr), m_isInitialized(false)
 {
 }
