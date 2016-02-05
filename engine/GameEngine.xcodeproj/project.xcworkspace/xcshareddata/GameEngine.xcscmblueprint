@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E7034A3B490EB15662700A5C73DF7B239A1FE452",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CAF89CBC7C7E190EA14C9A3177E7D3BC3B90F312" : 0,
+    "E7034A3B490EB15662700A5C73DF7B239A1FE452" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FA14B93C-682A-4161-8AB5-E8DABDE3CB98",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CAF89CBC7C7E190EA14C9A3177E7D3BC3B90F312" : "",
+    "E7034A3B490EB15662700A5C73DF7B239A1FE452" : "osx\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GameEngine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GameEngine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/david-lively\/SMU-CSE5382.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CAF89CBC7C7E190EA14C9A3177E7D3BC3B90F312"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "Application-Framework",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7034A3B490EB15662700A5C73DF7B239A1FE452"
+    }
+  ]
+}
