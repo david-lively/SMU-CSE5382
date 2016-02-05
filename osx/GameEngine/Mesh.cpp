@@ -48,6 +48,7 @@ void Mesh::OnRender(const GameTime& time)
     //56 draw it!
     gl::DrawElements((GLenum)Type, (GLuint)m_indexCount, gl::UNSIGNED_SHORT, (GLvoid*)nullptr);
     
+    /// unbind the program
     gl::UseProgram(0);
     
     check_gl_error();
