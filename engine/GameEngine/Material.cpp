@@ -18,7 +18,6 @@ using namespace std;
 
 bool Material::Build(string vertexShaderSource, string fragmentShaderSource)
 {
-
 	check_gl_error();
 
 	GLuint vertexShader = gl::CreateShader((GLenum)ShaderType::VertexShader);
@@ -145,5 +144,5 @@ bool Material::CompileSuccessful(GLint program)
 
 	gl::GetShaderiv(program, gl::COMPILE_STATUS, &status);
 
-	return status;
+	return status != (GLint)false;
 }

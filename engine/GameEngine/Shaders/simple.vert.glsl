@@ -1,4 +1,4 @@
-#version 410 core
+#version 150
 
 uniform mat4 World;
 uniform mat4 View;
