@@ -127,9 +127,6 @@ bool Game::Run()
     
 }
 
-
-
-
 void Game::Shutdown()
 {
     if (nullptr != m_window)
@@ -140,6 +137,23 @@ void Game::Shutdown()
     
     
 }
+
+/// <summary>
+/// returns the size of the framebuffer (the thing we're drawing to)
+/// </summary>
+void Game::GetFramebufferSize(int* width, int* height)
+{
+	if (!m_window)
+	{
+		Log::Error << "No GLFW window is available. Create a window before calling Game::GetFrameBufferSize\n";
+		DEBUG_BREAK;
+	}
+
+	glfwGetFramebufferSize(m_window, width, height);
+
+
+}
+
 
 
 

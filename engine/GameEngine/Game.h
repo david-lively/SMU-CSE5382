@@ -30,6 +30,8 @@ public:
         Log::Info << "Create any scene objects here.\n";
         return true;
     }
+
+	void GetFramebufferSize(int* width, int* height);
     
 
 private:

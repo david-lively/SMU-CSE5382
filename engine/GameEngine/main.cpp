@@ -24,4 +24,10 @@ int main(void)
     game.Run();
     
     Log::Info << "Done!\n";
+
+#ifdef _MSC_VER
+	cout << "Press enter to exit\n";
+	getchar();
+#endif
+
 }

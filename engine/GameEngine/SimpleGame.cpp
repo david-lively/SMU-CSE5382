@@ -53,27 +53,6 @@ bool SimpleGame::OnCreateScene()
     
     Log::Info << "Working directory is " << Files::GetCurrentDirectory() << endl;
     
-
-
-//	/// vertex shader source
-//	auto vert =
-//		"#version 150                       \n"
-//		"in vec3 Pos;                          \n"
-//		"void main()                        \n"
-//		"{                                  \n"
-//		"    gl_Position = vec4(Pos,1);\n"
-//		"}                                  \n"
-//		;
-//
-//	/// fragment shader source
-//	auto frag =
-//		"#version 150                       \n"
-//		"out vec4 fragmentColor;            \n"
-//		"void main() {                      \n"
-//		"    fragmentColor = vec4(1,0,1,1); \n"
-//		"}                                  \n"
-//		;
-
     string vertexShaderSource;
     string fragmentShaderSource;
 
@@ -81,11 +60,20 @@ bool SimpleGame::OnCreateScene()
     auto success = true;
     do
     {
-        if(!LoadShaders("GameEngine/Shaders/simple", vertexShaderSource, fragmentShaderSource))
-        {
-            Log::Error << "Could not load shader souurce. Exiting\n";
-            return false;
-        }
+
+#ifdef _MSC_VER
+		if(!LoadShaders("Shaders\\simple", vertexShaderSource, fragmentShaderSource))
+		{
+			Log::Error << "Could not load shader source. Exiting\n";
+			return false;
+		}
+#else
+		if (!LoadShaders("GameEngine/Shaders/simple", vertexShaderSource, fragmentShaderSource))
+		{
+			Log::Error << "Could not load shader source. Exiting\n";
+			return false;
+		}
+#endif
         
         success = material.Build(vertexShaderSource, fragmentShaderSource);
         
