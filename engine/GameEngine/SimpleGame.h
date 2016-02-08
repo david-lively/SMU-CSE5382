@@ -14,7 +14,8 @@
 class SimpleGame : public Game
 {
 public:
-    void OnCreateScene() override;
+    bool OnCreateScene() override;
+    bool LoadShaders(const std::string& baseFilename, std::string& vertexShaderSource, std::string& fragmentShaderSource);
     
     
 private:

@@ -1,17 +1,9 @@
-#version 150
-uniform float GameTimeTotalSeconds;
-uniform int EvenOdd;
+#version 410
 
-
-in vec4 vPosition;
-in vec4 vColor;
+in vec4 Color;
 out vec4 fragmentColor;
 
 void main() {
-
-    vec4 color = vec4(vPosition.xyz, 1);
-    
-    
-    fragmentColor = color;
-
+    fragmentColor = Color;
+//    fragmentColor = vec4(1,0,0,1);
 }

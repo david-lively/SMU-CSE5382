@@ -7,17 +7,20 @@
 //
 
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 #include "SimpleGame.h"
 #include "Mesh.h"
 #include "Material.h"
+#include "Files.h"
 
 
 
 
-void SimpleGame::OnCreateScene()
+
+bool SimpleGame::OnCreateScene()
 {
 	check_gl_error();
 
@@ -46,32 +49,80 @@ void SimpleGame::OnCreateScene()
 	};
 
 	cube.Initialize(coordinates, indices);
+    
+    
+    Log::Info << "Working directory is " << Files::GetCurrentDirectory() << endl;
+    
 
 
-	/// vertex shader source
-	auto vert =
-		"#version 150                       \n"
-		"in vec3 Pos;                          \n"
-		"void main()                        \n"
-		"{                                  \n"
-		"    gl_Position = vec4(Pos,1);\n"
-		"}                                  \n"
-		;
+//	/// vertex shader source
+//	auto vert =
+//		"#version 150                       \n"
+//		"in vec3 Pos;                          \n"
+//		"void main()                        \n"
+//		"{                                  \n"
+//		"    gl_Position = vec4(Pos,1);\n"
+//		"}                                  \n"
+//		;
+//
+//	/// fragment shader source
+//	auto frag =
+//		"#version 150                       \n"
+//		"out vec4 fragmentColor;            \n"
+//		"void main() {                      \n"
+//		"    fragmentColor = vec4(1,0,1,1); \n"
+//		"}                                  \n"
+//		;
 
-	/// fragment shader source
-	auto frag =
-		"#version 150                       \n"
-		"out vec4 fragmentColor;            \n"
-		"void main() {                      \n"
-		"    fragmentColor = vec4(1,0,1,1); \n"
-		"}                                  \n"
-		;
+    string vertexShaderSource;
+    string fragmentShaderSource;
 
-	auto& material = Create<Material>("simple-material");
-	if (!material.Build(vert, frag))
-	{
-		DEBUG_BREAK;
-	}
-
+    auto& material = Create<Material>("simple-material");
+    auto success = true;
+    do
+    {
+        if(!LoadShaders("GameEngine/Shaders/simple", vertexShaderSource, fragmentShaderSource))
+        {
+            Log::Error << "Could not load shader souurce. Exiting\n";
+            return false;
+        }
+        
+        success = material.Build(vertexShaderSource, fragmentShaderSource);
+        
+        if(!success)
+        {
+            cout << "Press enter to retry." << endl;
+            getchar();
+        }
+        
+    } while(!success);
+    
 	cube.Material = &material;
+    
+    return true;
 }
+
+bool SimpleGame::LoadShaders(const string& baseFilename, string& vertexShaderSource, string& fragmentShaderSource)
+{
+    auto vertFilename = baseFilename + ".vert.glsl";
+    auto fragFilename = baseFilename + ".frag.glsl";
+    
+    if(!Files::Exists(vertFilename))
+    {
+        Log::Error << "Could not find vertex shader \"" << vertFilename << "\"\n";
+        return false;
+    }
+    
+    if(!Files::Exists(fragFilename))
+    {
+        Log::Error << "Could not find fragment shader \"" << vertFilename << "\"\n";
+        return false;
+    }
+    
+    vertexShaderSource = Files::Read(vertFilename);
+    fragmentShaderSource = Files::Read(fragFilename);
+    
+    return true;
+    
+}
+

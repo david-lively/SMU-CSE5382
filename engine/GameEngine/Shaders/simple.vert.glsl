@@ -1,20 +1,47 @@
-#version 150
+#version 410
 
-uniform mat4 World;
-uniform mat4 View;
-uniform mat4 Projection;
+#define PI (3.141592f)
+#define TO_RADIANS(degrees) (degrees * PI / 180.f)
+
+/// uniforms - same value for all vertices
 uniform float GameTimeTotalSeconds;
+uniform float TimeScale = 1;
+uniform vec2 WindowSize;
 
-in vec3 Position;
-in vec4 Color;
+in vec3 Pos;
 
-out vec4 vPosition;
-out vec4 vColor;
+out vec4 Color;
+
+vec4 rotate(vec4 pos, float theta)
+{
+    float len = length(pos.xy);
+    float phi = atan(pos.y, pos.x);
+    
+    phi += theta;
+    
+    pos.x = cos(phi) * len;
+    pos.y = sin(phi) * len;
+    
+    return pos;
+}
+
 
 void main()
 {
-    vPosition = vec4(Position, 1);
-    vColor = Color;
-    gl_Position = Projection * View * World * vec4(Position,1);
-}
+    vec4 position = vec4(Pos,1);
+    
+    float theta = fract(GameTimeTotalSeconds * TimeScale) * 360;
 
+    /// move up and right by 0.6
+    position.xy += 0.6f;
+
+    /// rotate about origin
+    position = rotate(position, TO_RADIANS(theta));
+    
+    /// move up and right by 0.6
+    position.xy += 0.4f;
+    
+    Color = vec4(position.xyz, 1);
+    
+    gl_Position = position;
+}

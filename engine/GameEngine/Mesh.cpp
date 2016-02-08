@@ -8,6 +8,7 @@
 
 #include "Mesh.h"
 #include "Common.h"
+#include "Log.h"
 
 #include <iostream>
 
@@ -32,7 +33,9 @@ void Mesh::OnRender(const GameTime& time)
 
     /// tell GL which program (shaders) we're using
     gl::UseProgram(material.Program());
-
+    
+    SetUniforms(time);
+    
     /// bind the vertex and index buffers
     gl::BindBuffer((GLenum)BufferTarget::ElementArrayBuffer, m_indexBuffer);
     gl::BindBuffer((GLenum)BufferTarget::ArrayBuffer, m_vertexBuffer);
@@ -52,6 +55,21 @@ void Mesh::OnRender(const GameTime& time)
     gl::UseProgram(0);
     
     check_gl_error();
+}
+
+void Mesh::SetUniform(const string& name, float value)
+{
+    auto location = gl::GetUniformLocation(Material->Program(), name.c_str());
+    
+    if (location >= 0)
+        gl::Uniform1f(location, value);
+}
+
+void Mesh::SetUniforms(const GameTime& time)
+{
+    SetUniform("GameTimeTotalSeconds",time.TotalSeconds());
+//    SetUniform("TimeScale", 0.3f);
+    
 }
 
 

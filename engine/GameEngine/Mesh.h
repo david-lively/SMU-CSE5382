@@ -98,6 +98,26 @@ public:
     
     void OnRender(const GameTime& time) override;
     
+    virtual void SetUniforms(const GameTime& time);
+    void SetUniform(const std::string& name, float value);
+    
+    template<typename T>
+    void SetUniform(const std::string& name, T value)
+    {
+        auto location = gl::GetUniformLocation(Material->Program(), name.c_str());
+        
+        if (location >= 0)
+            SetUniform(location, value);
+    }
+    
+    void SetUniform(int location, float value)
+    {
+        gl::Uniform1f(location, value);
+    }
+    
+    
+
+    
     
 private:
     size_t m_vertexCount = 0;;

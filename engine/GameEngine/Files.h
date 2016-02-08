@@ -1,7 +1,19 @@
+
 #ifndef FILES_H
 #define FILES_H
 
 #include <string>
+
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
+
+
+#include "Log.h"
 
 /// <summary>
 /// provides file IO convenience routines
@@ -13,6 +25,23 @@ private:
 public:
 	static std::string Read(const std::string& path);
 	static bool Exists(const std::string& path);
+    
+    static std::string GetCurrentDirectory()
+    {
+        
+        char cCurrentPath[FILENAME_MAX];
+        
+        if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+        {
+            Log::Error << "Could not determine working directory.";
+        }
+        
+        cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+        
+        return std::string(cCurrentPath);
+        
+//        printf ("The current working directory is %s", cCurrentPath);
+    }
 
 };
 

@@ -76,7 +76,8 @@ bool Game::OnInitialize()
     Log::Info << "Renderer " << renderer << endl;
     Log::Info << "OpenGL version supported: " << version << endl;
 
-    OnCreateScene();
+    if(!OnCreateScene())
+        return false;
     
     gl::ClearColor(0,0,0.2f,1);
     
@@ -85,12 +86,12 @@ bool Game::OnInitialize()
     return m_isInitialized;
 }
 
-void Game::Run()
+bool Game::Run()
 {
     if(!Initialize())
     {
         Log::Error << "Could not initialize GLFW window.\n";
-        return;        
+        return false;
     }
     
     GameTime time;
@@ -121,6 +122,8 @@ void Game::Run()
     }
     
     Dispose();
+    
+    return true;
     
 }
 

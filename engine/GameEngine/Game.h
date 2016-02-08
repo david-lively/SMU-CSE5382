@@ -21,13 +21,14 @@ public:
     GameTime Time;
     
     
-    void Run();
+    bool Run();
     
     bool OnInitialize() override;
     
-    virtual void OnCreateScene()
+    virtual bool OnCreateScene()
     {
         Log::Info << "Create any scene objects here.\n";
+        return true;
     }
     
 
