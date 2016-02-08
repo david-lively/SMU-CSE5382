@@ -110,7 +110,7 @@ public:
             SetUniform(location, value);
     }
     
-    void SetUniform(int location, float value)
+    void SetUniform(int location, float value);
     {
         gl::Uniform1f(location, value);
     }
