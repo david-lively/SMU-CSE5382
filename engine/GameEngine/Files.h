@@ -4,7 +4,7 @@
 
 #include <string>
 
-#ifdef WINDOWS
+#ifdef _MSC_VER
 #include <direct.h>
 #define GetCurrentDir _getcwd
 #else

@@ -19,11 +19,9 @@ namespace Log
     
     const int NoHeader = 0x01;
     
-    
-    
-   
-  	struct Handler
+  	class Handler
 	{
+	public:
 		std::ostream* Stream;
 		std::string Label;
         bool PrintHeader=true;
