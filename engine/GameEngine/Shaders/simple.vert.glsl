@@ -1,4 +1,4 @@
-#version 410
+#version 150
 
 #define PI (3.141592f)
 #define TO_RADIANS(degrees) (degrees * PI / 180.f)
@@ -32,14 +32,8 @@ void main()
     
     float theta = fract(GameTimeTotalSeconds * TimeScale) * 360;
 
-    /// move up and right by 0.6
-    position.xy += 0.6f;
-
     /// rotate about origin
     position = rotate(position, TO_RADIANS(theta));
-    
-    /// move up and right by 0.6
-    position.xy += 0.4f;
     
     Color = vec4(position.xyz, 1);
     

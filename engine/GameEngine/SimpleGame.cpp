@@ -61,20 +61,12 @@ bool SimpleGame::OnCreateScene()
     do
     {
 
-#ifdef _MSC_VER
-		if(!LoadShaders("Shaders\\simple", vertexShaderSource, fragmentShaderSource))
+		if(!LoadShaders("simple", vertexShaderSource, fragmentShaderSource))
 		{
 			Log::Error << "Could not load shader source. Exiting\n";
 			return false;
 		}
-#else
-		if (!LoadShaders("GameEngine/Shaders/simple", vertexShaderSource, fragmentShaderSource))
-		{
-			Log::Error << "Could not load shader source. Exiting\n";
-			return false;
-		}
-#endif
-        
+
         success = material.Build(vertexShaderSource, fragmentShaderSource);
         
         if(!success)
@@ -92,8 +84,8 @@ bool SimpleGame::OnCreateScene()
 
 bool SimpleGame::LoadShaders(const string& baseFilename, string& vertexShaderSource, string& fragmentShaderSource)
 {
-    auto vertFilename = baseFilename + ".vert.glsl";
-    auto fragFilename = baseFilename + ".frag.glsl";
+    auto vertFilename = ShaderFolder + baseFilename + ".vert.glsl";
+    auto fragFilename = ShaderFolder + baseFilename + ".frag.glsl";
     
     if(!Files::Exists(vertFilename))
     {
@@ -107,7 +99,10 @@ bool SimpleGame::LoadShaders(const string& baseFilename, string& vertexShaderSou
         return false;
     }
     
+    Log::Info << "Loading vertex shader \"" << vertFilename << "\"\n";
     vertexShaderSource = Files::Read(vertFilename);
+
+    Log::Info << "Loading fragment shader \"" << vertFilename << "\"\n";
     fragmentShaderSource = Files::Read(fragFilename);
     
     return true;

@@ -57,19 +57,10 @@ void Mesh::OnRender(const GameTime& time)
     check_gl_error();
 }
 
-void Mesh::SetUniform(const string& name, float value)
-{
-    auto location = gl::GetUniformLocation(Material->Program(), name.c_str());
-    
-    if (location >= 0)
-        gl::Uniform1f(location, value);
-}
-
 void Mesh::SetUniforms(const GameTime& time)
 {
     SetUniform("GameTimeTotalSeconds",time.TotalSeconds());
-//    SetUniform("TimeScale", 0.3f);
-    
+    SetUniform("TimeScale", 0.5f);
 }
 
 

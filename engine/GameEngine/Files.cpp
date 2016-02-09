@@ -42,3 +42,4 @@ bool Files::Exists(const string& path)
 
 	return ifile.is_open();
 }
+
