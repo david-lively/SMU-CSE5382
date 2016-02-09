@@ -48,9 +48,9 @@
 		9831A2BE1C56A0A4005F2989 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9831A2C51C56A11A005F2989 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		9831A2C71C56A14C005F2989 /* libglfw.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.1.dylib; path = ../../../../../../../opt/local/lib/libglfw.3.1.dylib; sourceTree = "<group>"; };
-		9831A2CB1C56A221005F2989 /* gl_core_4_3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gl_core_4_3.hpp; sourceTree = "<group>"; };
-		9831A2CC1C56A221005F2989 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
-		9831A2CD1C56A221005F2989 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		9831A2CB1C56A221005F2989 /* gl_core_4_3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gl_core_4_3.hpp; path = GameEngine/ThirdParty/include/gl_core_4_3.hpp; sourceTree = "<group>"; };
+		9831A2CC1C56A221005F2989 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfw3.h; path = GameEngine/ThirdParty/include/glfw3.h; sourceTree = "<group>"; };
+		9831A2CD1C56A221005F2989 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glfw3native.h; path = GameEngine/ThirdParty/include/glfw3native.h; sourceTree = "<group>"; };
 		9831A2CF1C56A221005F2989 /* glfw3.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = glfw3.dll; sourceTree = "<group>"; };
 		9831A2D01C56A221005F2989 /* glfw3.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glfw3.lib; sourceTree = "<group>"; };
 		9831A2D11C56A221005F2989 /* glfw3dll.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glfw3dll.lib; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
-					"$(PROJECT_DIR)/Template/ThirdParty/include",
+					"$(SRCROOT)/GameEngine/ThirdParty/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,7 +441,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
-					"$(PROJECT_DIR)/Template/ThirdParty/include",
+					"$(SRCROOT)/GameEngine/ThirdParty/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
