@@ -16,6 +16,10 @@
 		9831A2F11C56A221005F2989 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 9831A2DD1C56A221005F2989 /* stb_image.c */; };
 		9831A2F21C56A221005F2989 /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 9831A2DF1C56A221005F2989 /* stb_image_write.c */; };
 		9831A2F31C56A221005F2989 /* gl_core_4_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9831A2EA1C56A221005F2989 /* gl_core_4_3.cpp */; };
+		98BD50D11C6BAA0E004A88C1 /* Vectors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98BD50CF1C6BAA0E004A88C1 /* Vectors.cpp */; };
+		98BD50D21C6BAA0E004A88C1 /* Vectors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98BD50CF1C6BAA0E004A88C1 /* Vectors.cpp */; };
+		98BD50D51C6BAB0A004A88C1 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98BD50D31C6BAB0A004A88C1 /* Matrix.cpp */; };
+		98BD50D61C6BAB0A004A88C1 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98BD50D31C6BAB0A004A88C1 /* Matrix.cpp */; };
 		98D48EEA1C624E0F00C3A36B /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EE81C624E0F00C3A36B /* Resource.cpp */; };
 		98D48EED1C6266E300C3A36B /* SimpleGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EEB1C6266E300C3A36B /* SimpleGame.cpp */; };
 		98D48EF01C62716800C3A36B /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EEE1C62716800C3A36B /* Material.cpp */; };
@@ -103,6 +107,10 @@
 		9831A2E71C56A221005F2989 /* stbi_pvr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pvr.h; sourceTree = "<group>"; };
 		9831A2E81C56A221005F2989 /* stbi_pvr_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pvr_c.h; sourceTree = "<group>"; };
 		9831A2EA1C56A221005F2989 /* gl_core_4_3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gl_core_4_3.cpp; sourceTree = "<group>"; };
+		98BD50CF1C6BAA0E004A88C1 /* Vectors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vectors.cpp; sourceTree = "<group>"; };
+		98BD50D01C6BAA0E004A88C1 /* Vectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vectors.h; sourceTree = "<group>"; };
+		98BD50D31C6BAB0A004A88C1 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		98BD50D41C6BAB0A004A88C1 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		98D48EE81C624E0F00C3A36B /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
 		98D48EE91C624E0F00C3A36B /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
 		98D48EEB1C6266E300C3A36B /* SimpleGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGame.cpp; sourceTree = "<group>"; };
@@ -284,6 +292,10 @@
 				98D48EE91C624E0F00C3A36B /* Resource.h */,
 				98D48EEE1C62716800C3A36B /* Material.cpp */,
 				98D48EEF1C62716800C3A36B /* Material.h */,
+				98BD50CF1C6BAA0E004A88C1 /* Vectors.cpp */,
+				98BD50D01C6BAA0E004A88C1 /* Vectors.h */,
+				98BD50D31C6BAB0A004A88C1 /* Matrix.cpp */,
+				98BD50D41C6BAB0A004A88C1 /* Matrix.h */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -366,6 +378,7 @@
 				98D48EED1C6266E300C3A36B /* SimpleGame.cpp in Sources */,
 				98F03C331C5FCC77008EEF9B /* glError.cpp in Sources */,
 				9831A2F31C56A221005F2989 /* gl_core_4_3.cpp in Sources */,
+				98BD50D51C6BAB0A004A88C1 /* Matrix.cpp in Sources */,
 				98F03C361C5FDD5D008EEF9B /* Files.cpp in Sources */,
 				9831A2ED1C56A221005F2989 /* etc1_utils.c in Sources */,
 				9831A2EF1C56A221005F2989 /* image_helper.c in Sources */,
@@ -374,6 +387,7 @@
 				9831A2BF1C56A0A4005F2989 /* main.cpp in Sources */,
 				98F03C2F1C5FCBF6008EEF9B /* Log.cpp in Sources */,
 				98F4ADB21C60087700D98467 /* Mesh.cpp in Sources */,
+				98BD50D11C6BAA0E004A88C1 /* Vectors.cpp in Sources */,
 				9831A2F21C56A221005F2989 /* stb_image_write.c in Sources */,
 				98D48EEA1C624E0F00C3A36B /* Resource.cpp in Sources */,
 				9831A2F01C56A221005F2989 /* SOIL2.c in Sources */,
@@ -391,6 +405,7 @@
 				A6BE86641C6B96F900B62F67 /* SimpleGame.cpp in Sources */,
 				A6BE86651C6B96F900B62F67 /* glError.cpp in Sources */,
 				A6BE86661C6B96F900B62F67 /* gl_core_4_3.cpp in Sources */,
+				98BD50D61C6BAB0A004A88C1 /* Matrix.cpp in Sources */,
 				A6BE86671C6B96F900B62F67 /* Files.cpp in Sources */,
 				A6BE86681C6B96F900B62F67 /* etc1_utils.c in Sources */,
 				A6BE86691C6B96F900B62F67 /* image_helper.c in Sources */,
@@ -399,6 +414,7 @@
 				A6BE866C1C6B96F900B62F67 /* main.cpp in Sources */,
 				A6BE866D1C6B96F900B62F67 /* Log.cpp in Sources */,
 				A6BE866E1C6B96F900B62F67 /* Mesh.cpp in Sources */,
+				98BD50D21C6BAA0E004A88C1 /* Vectors.cpp in Sources */,
 				A6BE866F1C6B96F900B62F67 /* stb_image_write.c in Sources */,
 				A6BE86701C6B96F900B62F67 /* Resource.cpp in Sources */,
 				A6BE86711C6B96F900B62F67 /* SOIL2.c in Sources */,
