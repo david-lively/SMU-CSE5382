@@ -17,13 +17,13 @@ public:
     SimpleGame()
     {
         /// Visual Studio
-        ShaderFolder = "./Shaders/";
+        ShaderFolder = "./GameEngine/Shaders/";
     }
     
     bool OnCreateScene() override;
     bool LoadShaders(const std::string& baseFilename, std::string& vertexShaderSource, std::string& fragmentShaderSource);
     /// location of shaders in the file system.
-    std::string ShaderFolder = "./Shaders/";
+    std::string ShaderFolder = "./GameEngine/Shaders/";
     
 private:
     
