@@ -14,6 +14,11 @@ using namespace std;
 
 
 
+void Material::SetUniforms(const GameTime& time)
+{
+	SetUniform("GameTimeTotalSeconds", time.TotalSeconds());
+	SetUniform("TimeScale", 0.5f);
+}
 
 
 bool Material::Build(string vertexShaderSource, string fragmentShaderSource)

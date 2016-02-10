@@ -28,20 +28,16 @@ bool Mesh::OnInitialize()
 void Mesh::OnRender(const GameTime& time)
 {
     check_gl_error();
-    
-    auto& material = *Material;
 
-    /// tell GL which program (shaders) we're using
-    gl::UseProgram(material.Program());
-    
-    SetUniforms(time);
-    
+	Material->Bind();
+	Material->SetUniforms(time);
+
     /// bind the vertex and index buffers
     gl::BindBuffer((GLenum)BufferTarget::ElementArrayBuffer, m_indexBuffer);
     gl::BindBuffer((GLenum)BufferTarget::ArrayBuffer, m_vertexBuffer);
     
     /// get the attribute location of Position (vertex) from the compiled shader
-    auto location = gl::GetAttribLocation(material.Program(), "Pos");
+    auto location = gl::GetAttribLocation(Material->Program(), "Pos");
     
     /// enable position - really useful when we have a lot of vertex attributes and want to disable some of them
     gl::EnableVertexAttribArray(location);
@@ -56,13 +52,6 @@ void Mesh::OnRender(const GameTime& time)
     
     check_gl_error();
 }
-
-void Mesh::SetUniforms(const GameTime& time)
-{
-    SetUniform("GameTimeTotalSeconds",time.TotalSeconds());
-    SetUniform("TimeScale", 0.5f);
-}
-
 
 
 
