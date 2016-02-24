@@ -21,18 +21,18 @@ struct TVector2
 template<typename T>
 struct TVector3 : public TVector2<T>
 {
-    T z;
+    T Z;
 };
 
 template<typename T>
 struct TVector4 : public TVector3<T>
 {
-    T w;
+    T W;
 };
 
-struct Vector2 : TVector2<float> {};
-struct Vector3 : TVector3<float> {};
-struct Vector4 : TVector4<float> {};
+typedef TVector2<float> Vector2;
+typedef TVector3<float> Vector3;
+typedef TVector4<float> Vector4;
 
 
 #endif /* Vectors_hpp */

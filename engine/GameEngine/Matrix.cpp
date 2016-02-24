@@ -8,6 +8,10 @@
 
 #include "Matrix.h"
 
+#include <cmath>
+
+using namespace std;
+
 
 Matrix Matrix::Identity()
 {
@@ -19,6 +23,128 @@ Matrix Matrix::Identity()
     m.m33 = 1;
     
     return m;
+}
+
+void Matrix::CreateRotationX(Matrix& m, float radians)
+{
+    float cosTheta = cos(radians);
+    float sinTheta = sin(radians);
+    
+    m.m11 = cosTheta;
+    m.m12 = -sinTheta;
+    m.m21 = sinTheta;
+    m.m22 = cosTheta;
+    
+}
+
+void Matrix::CreateRotationY(Matrix& m, float radians)
+{
+    float cosTheta = cos(radians);
+    float sinTheta = sin(radians);
+    
+    m.m00 = cosTheta;
+    m.m02 = -sinTheta;
+    m.m20 = sinTheta;;
+    m.m22 = cosTheta;
+    
+}
+
+void Matrix::CreateRotationZ(Matrix& m, float radians)
+{
+    float cosTheta = cos(radians);
+    float sinTheta = sin(radians);
+    
+    m.m00 = cosTheta;
+    m.m01 = -sinTheta;
+    m.m10 = sinTheta;
+    m.m11 = cosTheta;
+    
+}
+
+
+Matrix Matrix::CreateRotationX(float radians)
+{
+    Matrix m;
+
+    CreateRotationX(m,radians);
+    
+    return m;
+    
+}
+
+Matrix Matrix::CreateRotationY(float radians)
+{
+    Matrix m;
+    
+    CreateRotationY(m,radians);
+    
+    return m;
+    
+}
+
+Matrix Matrix::CreateRotationZ(float radians)
+{
+    Matrix m;
+    
+    CreateRotationZ(m,radians);
+    
+    return m;
+    
+}
+
+
+Matrix Matrix::CreateRotation(float x, float y, float z)
+{
+    auto m = CreateRotationX(x) * CreateRotationY(y) * CreateRotationZ(z);
+    
+    return m;
+}
+
+Matrix Matrix::CreateRotation(const Vector3& rotate)
+{
+    return CreateRotation(rotate.X, rotate.Y, rotate.Z);
+    
+}
+
+
+Matrix Matrix::CreateTranslation(float x, float y, float z)
+{
+    Matrix m;
+    
+    m.m03 = x;
+    m.m13 = y;
+    m.m23 = z;
+    
+    return m;
+}
+
+Matrix Matrix::CreateTranslation(const Vector3& position)
+{
+    return CreateTranslation(position.X, position.Y, position.Z);
+}
+
+
+Matrix Matrix::CreateScale(float x, float y, float z)
+{
+    Matrix m;
+    
+    m.m00 = x;
+    m.m11 = y;
+    m.m22 = z;
+    
+    return m;
+}
+
+
+Matrix Matrix::CreateScale(float uniformScale)
+{
+    return CreateScale(uniformScale, uniformScale, uniformScale);
+}
+
+Matrix Matrix::CreateScale(const Vector3& scale)
+{
+    return CreateScale(scale.X, scale.Y, scale.Z);
+    
 }
 
 
@@ -54,6 +180,30 @@ void Matrix::Multiply(const Matrix& left, const Matrix& right, Matrix& result)
     result.m32 = (((lm41 * rm13) + (lm42 * rm23)) + (lm43 * rm33)) + (lm44 * rm43);
     result.m33 = (((lm41 * rm14) + (lm42 * rm24)) + (lm43 * rm34)) + (lm44 * rm44);
 }
+
+
+Matrix Matrix::CreatePerspective(float fov, float aspect, float zNear, float zFar)
+{
+    Matrix m;
+    
+    auto halfHeight = zNear * tan(fov / 2.0f);
+    
+    auto halfWidth = halfHeight * aspect;
+    
+    auto depth = zFar - zNear;
+    
+    m.m00 = zNear / halfWidth;
+    m.m11 = zNear / halfHeight;
+    m.m22 = -(zFar + zNear) / depth;
+    m.m23 = -1;
+    m.m32 = -2 * zFar * zNear / depth;
+    m.m33 = 0;
+    
+    return m;
+}
+
+
+
 
 
 

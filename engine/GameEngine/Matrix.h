@@ -25,11 +25,27 @@ public:
     
     
     static Matrix Identity();
+    static void CreateRotationX(Matrix& m, float radians);
+    static void CreateRotationY(Matrix& m, float radians);
+    static void CreateRotationZ(Matrix& m, float radians);
+    
+    
+    static Matrix CreateRotationX(float radians);
+    static Matrix CreateRotationY(float radians);
+    static Matrix CreateRotationZ(float radians);
     
     static Matrix CreateRotation(float x, float y, float z);
+    static Matrix CreateRotation(const Vector3& rotate);
     static Matrix CreateTranslation(float x, float y, float z);
-    static Matrix CreateScale(float uniformScale);
+    static Matrix CreateTranslation(const Vector3& position);
+    
     static Matrix CreateScale(float x, float y, float z);
+    static Matrix CreateScale(float uniformScale);
+    static Matrix CreateScale(const Vector3& scale);
+    
+    static Matrix CreatePerspective(float fov, float aspect, float zNear, float zFar);
+  
+    
 
     
     static void Multiply(const Matrix& left, const Matrix& right, Matrix& result);
@@ -53,3 +69,11 @@ private:
 };
 
 #endif /* Matrix_hpp */
+
+
+
+
+
+
+
+
