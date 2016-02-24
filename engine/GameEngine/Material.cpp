@@ -8,6 +8,7 @@
 
 #include "Material.h"
 #include "Enums.h"
+#include "Files.h"
 
 #include <string>
 using namespace std;
@@ -150,4 +151,48 @@ bool Material::CompileSuccessful(GLint program)
 	gl::GetShaderiv(program, gl::COMPILE_STATUS, &status);
 
 	return status != (GLint)false;
+}
+
+
+bool Material::Build(const std::string& path)
+{
+    auto vertFilename = path + ".vert.glsl";
+    auto fragFilename = path + ".frag.glsl";
+    
+    if(!Files::Exists(vertFilename))
+    {
+        Log::Error << "Could not find vertex shader \"" << vertFilename << "\"\n";
+        return false;
+    }
+    
+    if(!Files::Exists(fragFilename))
+    {
+        Log::Error << "Could not find fragment shader \"" << vertFilename << "\"\n";
+        return false;
+    }
+    
+    
+    bool success = true;
+    
+    do
+    {
+    
+        Log::Info << "Loading vertex shader \"" << vertFilename << "\"\n";
+        auto vertexShaderSource = Files::Read(vertFilename);
+        
+        Log::Info << "Loading fragment shader \"" << vertFilename << "\"\n";
+        auto fragmentShaderSource = Files::Read(fragFilename);
+        
+        success = Build(vertexShaderSource, fragmentShaderSource);
+
+        if(!success)
+        {
+            cout << "Press enter to retry." << endl;
+            getchar();
+        }
+        
+    } while(!success);
+    
+    return true;
+    
 }

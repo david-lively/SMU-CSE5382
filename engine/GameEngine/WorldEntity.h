@@ -6,9 +6,18 @@
 //  Copyright © 2016 David Lively. All rights reserved.
 //
 
-#ifndef WorldEntity_hpp
-#define WorldEntity_hpp
+#ifndef WORLDENTITY_H
+#define WORLDENTITY_H
 
-#include <stdio.h>
+#include "GameObject.h"
+#include "Transform.h"
+
+class WorldEntity : public GameObject
+{
+public:
+    Transform Transform;
+    
+};
+
 
 #endif /* WorldEntity_hpp */

@@ -11,7 +11,6 @@ uniform mat4 Projection;
 /// uniforms - same value for all vertices
 uniform float GameTimeTotalSeconds;
 uniform float TimeScale = 1;
-uniform vec2 WindowSize;
 
 in vec3 Pos;
 
@@ -21,10 +20,9 @@ out vec4 Color;
 void main()
 {
     vec4 position = vec4(Pos,1);
-    position.z = -2;
+    position.z -= 2;
     
-    position = Projection * World  * position;
-    
+    position = Projection * View * World * position;    
     
     Color = vec4(1);
     gl_Position = position;

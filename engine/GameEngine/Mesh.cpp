@@ -31,6 +31,8 @@ void Mesh::OnRender(const GameTime& time)
 
 	Material->Bind();
 	Material->SetUniforms(time);
+    
+    gl::PolygonMode(gl::FRONT_AND_BACK, (GLenum)Material->FillType);
 
     /// bind the vertex and index buffers
     gl::BindBuffer((GLenum)BufferTarget::ElementArrayBuffer, m_indexBuffer);

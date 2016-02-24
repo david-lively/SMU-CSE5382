@@ -12,12 +12,12 @@
 using namespace std;
 
 #include "Common.h"
-#include "SimpleGame.h"
+#include "AsteroidsGame.h"
 
 
 int main(void)
 {
-    SimpleGame game;
+    AsteroidsGame game;
     
     Log::Info << "Running game.\n";
     

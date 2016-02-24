@@ -111,9 +111,9 @@ Matrix Matrix::CreateTranslation(float x, float y, float z)
 {
     Matrix m;
     
-    m.m03 = x;
-    m.m13 = y;
-    m.m23 = z;
+    m.m30 = x;
+    m.m31 = y;
+    m.m32 = z;
     
     return m;
 }

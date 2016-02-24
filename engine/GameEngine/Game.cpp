@@ -9,10 +9,21 @@
 
 #include <iostream>
 
+
+Game* Game::m_instance = nullptr;
+Camera Game::Camera;
+
 using namespace std;
 
 Game::Game() : m_window(nullptr), m_isInitialized(false)
 {
+    if (nullptr != m_instance)
+    {
+        Log::Error << "Only one instance of Game is allowed\n";
+        throw;
+    }
+    
+    m_instance = this;
 }
 
 
@@ -143,13 +154,13 @@ void Game::Shutdown()
 /// </summary>
 void Game::GetFramebufferSize(int* width, int* height)
 {
-	if (!m_window)
+	if (!m_instance->m_window)
 	{
 		Log::Error << "No GLFW window is available. Create a window before calling Game::GetFrameBufferSize\n";
 		DEBUG_BREAK;
 	}
 
-	glfwGetFramebufferSize(m_window, width, height);
+	glfwGetFramebufferSize(m_instance->m_window, width, height);
 
 
 }

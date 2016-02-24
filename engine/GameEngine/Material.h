@@ -13,12 +13,19 @@
 
 #include "Common.h"
 #include "GameObject.h"
+#include "Matrix.h"
+#include "Enums.h"
 
 
 class Material : public GameObject
 {
 public:
+    PolygonMode FillType = PolygonMode::Fill;
+    
+    
     bool Build(std::string vertexShaderSource, std::string fragmentShaderSource);
+    
+    bool Build(const std::string& path);
     
     void OnDispose() override;
     
@@ -50,7 +57,7 @@ public:
 	generate an OpenGL error.
 	*/
 	template<typename T>
-	void SetUniform(const std::string& name, T value)
+	void SetUniform(const std::string& name, const T& value)
 	{
 		auto location = gl::GetUniformLocation(m_program, name.c_str());
 
@@ -72,6 +79,11 @@ public:
 	{
 		gl::Uniform1i(location, value);
 	}
+    
+    inline void SetUniform(int location, const Matrix& m)
+    {
+        gl::UniformMatrix4fv(location, 1, false, &m.m00);
+    }
 
 
 

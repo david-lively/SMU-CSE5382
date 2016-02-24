@@ -6,9 +6,8 @@
 //  Copyright © 2016 David Lively. All rights reserved.
 //
 
-#ifndef Asteroid_hpp
-#define Asteroid_hpp
+#ifndef ASTEROID_H
+#define ASTEROID_H
 
-#include <stdio.h>
 
 #endif /* Asteroid_hpp */

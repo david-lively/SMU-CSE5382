@@ -13,12 +13,14 @@
 
 #include "Common.h"
 #include "GameObject.h"
+#include "Camera.h"
 
 class Game : public GameObject
 {
 public:
     Game();
     GameTime Time;
+    static Camera Camera;
     
     
     bool Run();
@@ -31,11 +33,13 @@ public:
         return true;
     }
 
-	void GetFramebufferSize(int* width, int* height);
+	static void GetFramebufferSize(int* width, int* height);
     
+    static Game& Instance() { return *m_instance; }
 
 private:
     GLFWwindow* m_window;
+    static Game* m_instance;
     
     
     bool m_isInitialized;

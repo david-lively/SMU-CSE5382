@@ -6,4 +6,4 @@
 //  Copyright © 2016 David Lively. All rights reserved.
 //
 
-#include "Asteroid.hpp"
+#include "Asteroid.h"

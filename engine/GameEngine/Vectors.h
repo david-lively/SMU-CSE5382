@@ -10,29 +10,58 @@
 #define VECTORS_H
 
 
-template<typename T>
-struct TVector2
+struct Vector2
 {
-    T X;
-    T Y;
+    float X;
+    float Y;
+    
+    Vector2() : X(0), Y(0)
+    {
+    }
+    
+    Vector2(float x, float y) : X(x), Y(y)
+    {
+        
+    }
     
 };
 
-template<typename T>
-struct TVector3 : public TVector2<T>
+struct Vector3 : public Vector2
 {
-    T Z;
+    float Z;
+    
+    Vector3() : Vector2(), Z(0)
+    {
+        
+    }
+    
+    Vector3(float x, float y, float z) : Vector2(x,y), Z(z)
+    {
+        
+    }
+    
+    inline Vector3 operator* (const int multiplier) const
+    {
+        return Vector3(X * multiplier, Y * multiplier, Z * multiplier);
+    }
+    
+    
 };
 
-template<typename T>
-struct TVector4 : public TVector3<T>
+struct Vector4 : public Vector3
 {
-    T W;
+    float W;
+    
+    Vector4() : Vector3(), W(0)
+    {
+        
+    }
+    
+    Vector4(float x, float y, float z, float w) : Vector3(x,y,z)
+    {
+        
+    }
 };
-
-typedef TVector2<float> Vector2;
-typedef TVector3<float> Vector3;
-typedef TVector4<float> Vector4;
 
 
 #endif /* Vectors_hpp */
