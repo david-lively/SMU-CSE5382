@@ -66,3 +66,35 @@ void Ship::OnRender(const GameTime& time)
     m_material->SetUniform("Projection",cam.GetProjectionMatrix());
 }
 
+void Ship::ProcessInput()
+{
+    auto* window = Game::Instance().Window();
+    
+    const Vector3 speed(0.1f, 0.1f, 0.1f);
+    
+    Vector3 push, spin;
+
+    
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+    {
+        spin.Z -= speed.Z;
+    }
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+    {
+        spin.Z += speed.Z;
+    }
+
+    auto up = Transform.Up();
+
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+    {
+        push += up;
+    }
+    
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+    {
+        push -= up;
+    }
+    
+}
+

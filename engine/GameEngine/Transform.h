@@ -32,9 +32,17 @@ public:
         auto mr = Matrix::CreateRotation(Rotation);
         auto ms = Matrix::CreateScale(Scale);
         
-        auto result = (mt * ms) * mr;
+        auto result = mr * mt * ms;
         
         return result;
+    }
+    
+    Vector3 Up()
+    {
+        auto m = GetMatrix();
+
+        return Vector3(m.m10, m.m11, m.m12);        
+        
     }
     
     

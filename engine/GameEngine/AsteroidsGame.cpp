@@ -21,6 +21,8 @@ using namespace std;
 #include <cmath>
 
 
+Grid* g_grid = nullptr;
+
 bool AsteroidsGame::OnCreateScene()
 {
     CreateShip();
@@ -28,10 +30,11 @@ bool AsteroidsGame::OnCreateScene()
     Create<InputHandler>("asteroids-input");
     
     auto& grid = Create<Grid>("test-grid");
+    g_grid = &grid;
 
-    grid.Transform.Scale *= 2;
-//    grid.Transform.Translation.Z = -10;
-//    grid.Transform.Rotation.X = TO_RADIANS(10);
+//    grid.Transform.Scale *= 2;
+//    grid.Transform.Translation.Z = -2;
+//    grid.Transform.Rotation.X = TO_RADIANS();
 
     return true;
     
@@ -41,7 +44,9 @@ void AsteroidsGame::OnUpdate(const GameTime& time)
 {
     auto& cam = Game::Camera;
     
-    cam.Transform.Translation.X = sin(time.TotalSeconds());
+    cam.Transform.Translation.Z = 2;
+//    cam.Transform.Translation.X = sin(time.TotalSeconds());
+    g_grid->Transform.Rotation = time.TotalSeconds();
 }
 
 

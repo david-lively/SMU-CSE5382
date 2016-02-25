@@ -26,6 +26,8 @@ public:
     
     void OnUpdate(const GameTime& time) override;
     void OnRender(const GameTime& time) override;
+    
+    void ProcessInput();
 private:
     Mesh* m_mesh;
     Material* m_material;
