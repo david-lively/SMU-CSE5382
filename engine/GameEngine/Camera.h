@@ -9,6 +9,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+#include "Common.h"
 #include "WorldEntity.h"
 #include "Matrix.h"
 #include "Vectors.h"
@@ -20,7 +21,7 @@ public:
     float ZNear;
     float ZFar;
     
-    Camera() : FieldOfView(45), ZNear(1), ZFar(1000)
+    Camera() : FieldOfView(TO_RADIANS(45)), ZNear(1), ZFar(1000)
     {
         
     }

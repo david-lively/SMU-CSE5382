@@ -17,7 +17,7 @@ Matrix& Camera::GetProjectionMatrix()
     
     Game::GetFramebufferSize(&w, &h);
     
-    float aspect = w / h;
+    float aspect = w * 1.f / h;
     
     if (aspect != m_previousAspectRatio)
     {

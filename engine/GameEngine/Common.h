@@ -38,6 +38,9 @@
    OutputDebugString( os_.str().c_str() );  \
    cerr << s;								\
 }
+#define PI (3.14159f)
+#define TO_RADIANS(degrees) (degrees * PI/180.f)
+#define TO_DEGREES(radians) (radians * 180.f/PI)
 
 #include <iostream>
 
