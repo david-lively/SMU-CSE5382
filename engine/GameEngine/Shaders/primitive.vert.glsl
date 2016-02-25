@@ -20,7 +20,7 @@ out vec4 Color;
 void main()
 {
     vec4 position = vec4(Pos,1);
-    position.z -= 2;
+//    position.z -= 2;
     
     position = Projection * View * World * position;    
     

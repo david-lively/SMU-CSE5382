@@ -1,38 +1,35 @@
 //
-//  Ship.hpp
+//  Grid.hpp
 //  GameEngine
 //
-//  Created by David Lively on 2/22/16.
+//  Created by David Lively on 2/25/16.
 //  Copyright © 2016 David Lively. All rights reserved.
 //
 
-#ifndef SHIP_H
-#define SHIP_H
+#ifndef GRID_H
+#define GRID_H
 
-#include "Common.h"
 #include "WorldEntity.h"
 #include "Mesh.h"
+#include "Material.h"
 
-class Ship : public WorldEntity
+class Grid : public WorldEntity
 {
 public:
-    
-    Ship()
-    {
-        
-    }
     
     bool OnInitialize() override;
     
     void OnUpdate(const GameTime& time) override;
     void OnRender(const GameTime& time) override;
     
-    void ProcessInput();
+    Mesh& CreateMesh();
 private:
     Mesh* m_mesh;
     Material* m_material;
     
+private:
+    
 };
 
 
-#endif /* Ship_hpp */
+#endif /* Grid_hpp */

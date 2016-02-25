@@ -36,6 +36,8 @@ public:
 	static void GetFramebufferSize(int* width, int* height);
     
     static Game& Instance() { return *m_instance; }
+    
+    GLFWwindow* Window() const { return m_window; }
 
 private:
     GLFWwindow* m_window;

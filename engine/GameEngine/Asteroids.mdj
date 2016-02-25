@@ -2692,11 +2692,11 @@
 													"containerExtending": false,
 													"left": 0,
 													"top": 0,
-													"width": 104,
+													"width": 202,
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "+bool PrintHeader",
+													"text": "+bool PrintHeader: AsteroidsGame",
 													"horizontalAlignment": 0,
 													"verticalAlignment": 5
 												}
@@ -12873,6 +12873,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "AsteroidsGame",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -12937,7 +12938,7 @@
 									"containerExtending": false,
 									"left": 3425,
 									"top": 90,
-									"width": 10,
+									"width": 105,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -13242,6 +13243,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Camera",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -13306,7 +13308,7 @@
 									"containerExtending": false,
 									"left": 3519.5,
 									"top": 90,
-									"width": 10,
+									"width": 57,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -13352,11 +13354,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 171,
+											"width": 269,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-float m_previousAspectRatio",
+											"text": "-float m_previousAspectRatio: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -18962,6 +18964,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Files",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -19026,7 +19029,7 @@
 									"containerExtending": false,
 									"left": 2332,
 									"top": 27.5,
-									"width": 10,
+									"width": 40,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -19359,6 +19362,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Game",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -19423,7 +19427,7 @@
 									"containerExtending": false,
 									"left": 3599.5,
 									"top": 90,
-									"width": 10,
+									"width": 46,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -19840,6 +19844,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "GameObject",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -19904,7 +19909,7 @@
 									"containerExtending": false,
 									"left": 2372,
 									"top": 27.5,
-									"width": 10,
+									"width": 86,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -20769,6 +20774,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "GameTime",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -20833,7 +20839,7 @@
 									"containerExtending": false,
 									"left": 2412,
 									"top": 27.5,
-									"width": 10,
+									"width": 77,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -21449,6 +21455,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Material",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -21513,7 +21520,7 @@
 									"containerExtending": false,
 									"left": 3639.5,
 									"top": 90,
-									"width": 10,
+									"width": 59,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -21559,11 +21566,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 137,
+											"width": 235,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+PolygonMode FillType",
+											"text": "+PolygonMode FillType: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -22128,6 +22135,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Matrix",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -22192,7 +22200,7 @@
 									"containerExtending": false,
 									"left": 2532,
 									"top": 27.5,
-									"width": 10,
+									"width": 48,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -22945,6 +22953,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Mesh",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -23009,7 +23018,7 @@
 									"containerExtending": false,
 									"left": 3679.5,
 									"top": 90,
-									"width": 10,
+									"width": 43,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -23055,11 +23064,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 106,
+											"width": 204,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+BeginMode Type",
+											"text": "+BeginMode Type: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -23083,11 +23092,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 131,
+											"width": 229,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-size_t m_vertexCount",
+											"text": "-size_t m_vertexCount: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -23111,11 +23120,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 135,
+											"width": 233,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-GLuint m_vertexBuffer",
+											"text": "-GLuint m_vertexBuffer: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -23139,11 +23148,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 126,
+											"width": 224,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-size_t m_indexCount",
+											"text": "-size_t m_indexCount: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -23167,11 +23176,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 130,
+											"width": 228,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-GLuint m_indexBuffer",
+											"text": "-GLuint m_indexBuffer: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -23195,11 +23204,11 @@
 											"containerExtending": false,
 											"left": 0,
 											"top": 0,
-											"width": 85,
+											"width": 183,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-GLuint m_vao",
+											"text": "-GLuint m_vao: AsteroidsGame",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -23540,6 +23549,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Resource",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -23604,7 +23614,7 @@
 									"containerExtending": false,
 									"left": 3719.5,
 									"top": 90,
-									"width": 10,
+									"width": 68,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -23965,6 +23975,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "Ship",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -24029,7 +24040,7 @@
 									"containerExtending": false,
 									"left": 3559.5,
 									"top": 90,
-									"width": 10,
+									"width": 39,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -24362,6 +24373,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
+											"text": "WorldEntity",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -24426,7 +24438,7 @@
 									"containerExtending": false,
 									"left": 2572,
 									"top": 27.5,
-									"width": 10,
+									"width": 83,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {

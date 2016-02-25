@@ -146,7 +146,6 @@ void Game::Shutdown()
         m_window = nullptr;
     }
     
-    
 }
 
 /// <summary>

@@ -70,7 +70,7 @@ public:
                        );
         
         /// unbind the vertex buffer
-        gl::BindBuffer((GLenum)BufferTarget::ArrayBuffer, 0);
+//        gl::BindBuffer((GLenum)BufferTarget::ArrayBuffer, 0);
         
         
         /// now, generate and populate the index buffer
@@ -89,10 +89,12 @@ public:
                        , (GLenum)BufferUsageHint::StaticDraw
                        );
         
-        gl::BindBuffer((GLenum)BufferTarget::ElementArrayBuffer, 0);
+//        gl::BindBuffer((GLenum)BufferTarget::ElementArrayBuffer, 0);
 
         /// make sure there aren't any pending OpenGL errors
         check_gl_error();
+        
+        gl::BindVertexArray(0);
         
     }
     
