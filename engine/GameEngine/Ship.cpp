@@ -6,6 +6,7 @@
 //  Copyright © 2016 David Lively. All rights reserved.
 //
 
+#include "Common.h"
 #include "Ship.h"
 #include "Mesh.h"
 #include "Game.h"
@@ -41,6 +42,7 @@ bool Ship::OnInitialize()
     m_material = &material;
     
     mesh.Material = &material;
+    material.FillType = PolygonMode::Line;
     
     
     return material.Build("Shaders/primitive");
@@ -48,16 +50,15 @@ bool Ship::OnInitialize()
 
 void Ship::OnUpdate(const GameTime& time)
 {
+    
 }
 
 
 void Ship::OnRender(const GameTime& time)
 {
-    static Matrix ident = Matrix::Identity();
     
     auto& cam = Game::Camera;
     
-    cam.Transform.Translation.X = sin(time.TotalSeconds());
 
     m_material->Bind();
     m_material->SetUniform("World", Transform.GetMatrix());

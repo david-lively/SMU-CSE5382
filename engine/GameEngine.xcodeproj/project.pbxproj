@@ -35,6 +35,10 @@
 		98D48EEA1C624E0F00C3A36B /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EE81C624E0F00C3A36B /* Resource.cpp */; };
 		98D48EED1C6266E300C3A36B /* SimpleGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EEB1C6266E300C3A36B /* SimpleGame.cpp */; };
 		98D48EF01C62716800C3A36B /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D48EEE1C62716800C3A36B /* Material.cpp */; };
+		98DEDA5E1C7F9F11005776DB /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DEDA5C1C7F9F11005776DB /* InputHandler.cpp */; };
+		98DEDA5F1C7F9F11005776DB /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DEDA5C1C7F9F11005776DB /* InputHandler.cpp */; };
+		98DEDA621C7FA121005776DB /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DEDA601C7FA121005776DB /* Grid.cpp */; };
+		98DEDA631C7FA121005776DB /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DEDA601C7FA121005776DB /* Grid.cpp */; };
 		98F03C231C5FA3A2008EEF9B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98F03C211C5FA3A2008EEF9B /* Game.cpp */; };
 		98F03C261C5FCAF3008EEF9B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98F03C241C5FCAF3008EEF9B /* GameObject.cpp */; };
 		98F03C2C1C5FCBB4008EEF9B /* GameTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98F03C2A1C5FCBB4008EEF9B /* GameTime.cpp */; };
@@ -143,6 +147,10 @@
 		98D48EEC1C6266E300C3A36B /* SimpleGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGame.h; sourceTree = "<group>"; };
 		98D48EEE1C62716800C3A36B /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
 		98D48EEF1C62716800C3A36B /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		98DEDA5C1C7F9F11005776DB /* InputHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputHandler.cpp; sourceTree = "<group>"; };
+		98DEDA5D1C7F9F11005776DB /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		98DEDA601C7FA121005776DB /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
+		98DEDA611C7FA121005776DB /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		98F03C211C5FA3A2008EEF9B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		98F03C221C5FA3A2008EEF9B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		98F03C241C5FCAF3008EEF9B /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -336,6 +344,10 @@
 				98BD50D01C6BAA0E004A88C1 /* Vectors.h */,
 				980D9BE11C7E23A400C30167 /* WorldEntity.cpp */,
 				980D9BE21C7E23A400C30167 /* WorldEntity.h */,
+				98DEDA5C1C7F9F11005776DB /* InputHandler.cpp */,
+				98DEDA5D1C7F9F11005776DB /* InputHandler.h */,
+				98DEDA601C7FA121005776DB /* Grid.cpp */,
+				98DEDA611C7FA121005776DB /* Grid.h */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -415,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F03C231C5FA3A2008EEF9B /* Game.cpp in Sources */,
+				98DEDA5E1C7F9F11005776DB /* InputHandler.cpp in Sources */,
 				98D48EED1C6266E300C3A36B /* SimpleGame.cpp in Sources */,
 				98F03C331C5FCC77008EEF9B /* glError.cpp in Sources */,
 				9831A2F31C56A221005F2989 /* gl_core_4_3.cpp in Sources */,
@@ -432,6 +445,7 @@
 				98F4ADB21C60087700D98467 /* Mesh.cpp in Sources */,
 				98BD50D11C6BAA0E004A88C1 /* Vectors.cpp in Sources */,
 				9831A2F21C56A221005F2989 /* stb_image_write.c in Sources */,
+				98DEDA621C7FA121005776DB /* Grid.cpp in Sources */,
 				98D48EEA1C624E0F00C3A36B /* Resource.cpp in Sources */,
 				980D9BE51C7E23A400C30167 /* AsteroidsGame.cpp in Sources */,
 				980D9BE91C7E23A400C30167 /* Transform.cpp in Sources */,
@@ -448,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BE86631C6B96F900B62F67 /* Game.cpp in Sources */,
+				98DEDA5F1C7F9F11005776DB /* InputHandler.cpp in Sources */,
 				A6BE86641C6B96F900B62F67 /* SimpleGame.cpp in Sources */,
 				A6BE86651C6B96F900B62F67 /* glError.cpp in Sources */,
 				A6BE86661C6B96F900B62F67 /* gl_core_4_3.cpp in Sources */,
@@ -465,6 +480,7 @@
 				A6BE866E1C6B96F900B62F67 /* Mesh.cpp in Sources */,
 				98BD50D21C6BAA0E004A88C1 /* Vectors.cpp in Sources */,
 				A6BE866F1C6B96F900B62F67 /* stb_image_write.c in Sources */,
+				98DEDA631C7FA121005776DB /* Grid.cpp in Sources */,
 				A6BE86701C6B96F900B62F67 /* Resource.cpp in Sources */,
 				980D9BE61C7E23A400C30167 /* AsteroidsGame.cpp in Sources */,
 				980D9BEA1C7E23A400C30167 /* Transform.cpp in Sources */,

@@ -40,10 +40,22 @@ struct Vector3 : public Vector2
         
     }
     
-    inline Vector3 operator* (const int multiplier) const
+    template<typename T>
+    inline Vector3 operator* (const T& multiplier) const
     {
         return Vector3(X * multiplier, Y * multiplier, Z * multiplier);
     }
+    
+    template<typename T>
+    inline Vector3& operator*=(const T& rval)
+    {
+        X *= rval;
+        Y *= rval;
+        Z *= rval;
+        
+        return *this;
+    }
+    
     
     
 };
