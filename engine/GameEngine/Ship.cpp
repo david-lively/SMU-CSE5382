@@ -21,6 +21,8 @@ bool Ship::OnInitialize()
 {
     auto& mesh = Create<Mesh>("ship-mesh");
     
+    
+    /// narrow triangle pointed along the positive Y axis
     vector<float> vertices =
     {
         0,0.5f, 0
@@ -56,11 +58,10 @@ void Ship::OnUpdate(const GameTime& time)
 
 void Ship::OnRender(const GameTime& time)
 {
-    
     auto& cam = Game::Camera;
     
-
     m_material->Bind();
+
     m_material->SetUniform("World", Transform.GetMatrix());
     m_material->SetUniform("View",cam.GetViewMatrix());
     m_material->SetUniform("Projection",cam.GetProjectionMatrix());
