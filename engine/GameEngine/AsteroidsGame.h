@@ -22,7 +22,6 @@ public:
     
     bool OnCreateScene() override;
     
-    void OnUpdate(const GameTime& time) override;
 
     /// location of shaders in the file system.
 	std::string ShaderFolder;
